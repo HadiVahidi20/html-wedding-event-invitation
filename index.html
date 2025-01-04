@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation</title>
+    <style>
+        * {
+            font-size: 10px;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            font-size: 10px;
+            background-color: #fff5dd;
+            color: #5a3e2b;
+        }
+        nav {
+      background-color: #fbe4d5;
+      width: 100%;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+    nav ul li {
+      margin: 0 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+      font-size: 1.5em;
+      transition: color 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #ff7f50;
+    }
+    .contact-button {
+      background-color: #ff7f50;
+      color: white;
+      margin-left: 60px;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.5em;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      transition: scale .5s ease;
+    }
+    .contact-button:hover{
+        background-color: #ff5722;
+        scale: 1.1;
+    }
+
+        .main-container {
+            width: 80%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background-color: #f9e0d9;
+            border-radius: 10px;
+            margin: 30px 0px;
+        }
+
+        header h1 {
+            font-size: 6em;
+            color: #8b5e3c;
+        }
+
+        header p {
+            font-size: 2.4em;
+            margin: 10px 0 20px;
+            color: #d82f29;
+        }
+
+        .couple-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            
+        }
+
+        .couple-section img {
+            width: calc(33.33% - 20px);
+            max-width: 300px;
+            border-radius: 40% 40% 0 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease
+        }
+        .couple-section img:hover {
+            transform: scale(1.1);
+        }
+
+        .our-story {
+            width: 100%;
+            margin: 20px auto;
+            padding: 50px;
+            
+            background-color: #fbe4d5;
+            border-radius: 0px 20px 0px 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        
+        }
+
+        .our-story img {
+            width: 70%;
+            max-width: 400px;
+            float: left;
+            margin: 0 20px 20px 0;
+            border-radius: 10px;
+        }
+
+        .our-story h2 {
+            font-size: 5em;
+            margin-bottom: 20px;
+            color: #8b5e3c;
+        
+        }
+
+        .our-story p {
+            line-height: 1.6em;
+            margin-bottom: 20px;
+            font-size: 1.6em;
+            text-align: justify;
+        }
+
+        #readmorebtn {
+            display: block;
+            width: 100%;
+            max-width: 350px;
+            margin: 20px auto;
+            background-color: #c76c50;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 2em;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        #readmorebtn:hover{
+            background-color: #c65353;
+        
+        }
+
+        .details {
+            width: 100%;
+            aspect-ratio:  16 / 9;
+            text-align: left;
+            padding: 40px 20px;
+            background-image: url(./image/chinees-bride.jpg);
+            background-size: cover;
+            background-position: center;
+            background-color: #fbe4d5;
+            clear: both;
+            border-radius: 0px 20px 0px 50px;
+        }
+        .transbox{
+            width: 50%;
+            background-color: #FBE4D580;
+            padding: 10px;
+            border-radius: 0px 20px 0px 50px;
+        }
+
+        .details h2 {
+            font-size: 3.6em;
+            margin-bottom: 20px;
+            color: #8b5e3c;
+        }
+        .details strong {
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        .details p {
+            font-size: 2em;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        #our-mates h2{
+            font-size: 3em;
+            color: #8b5e3c;
+            margin: auto;
+            padding-top: 30px;
+            text-align: center;
+        }
+        
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin: 30px 0px;
+}
+
+.gallery {
+    border: 2px solid #e0b89f;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            text-align: center;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.gallery:hover img {
+    transform: scale(1.1);
+}
+
+.gallery .full-name {
+    padding: 10px;
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #5a3e2b;;
+}
+
+.rsvp{
+       width: 100%;
+       aspect-ratio:  16 / 9;
+       text-align: left;
+      padding: 40px 20px;
+      background-image: url(./image/gft.jpg);
+      background-size: cover;
+      background-position: center;
+     background-color: #f4f1ef;
+      clear: both;
+     border-radius: 0px 20px 0px 50px;     
+     margin: 50px 0px;
+    
+}
+.rsvp h2 {
+            font-size: 8em;
+            margin-bottom: 20px;
+        }
+
+.rsvp p {
+            font-size: 4em;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+.rsvp button {
+            background-color: #d05252;
+            margin: 20px;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.8em;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+.rsvp button:hover {
+            background-color: #b94242;
+        }
+        
+    
+        footer {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            background-color: #f9e0d9;
+            color: rgb(83, 83, 83);
+            clear: both;
+        }
+        footer p {
+            font-size: 1.4em;
+        }
+
+        
+</style>
+        
+</head>
+
+<body>
+    <nav>
+        <ul>
+          <li><a href="#our-story">Our Story</a></li>
+          <li><a href="#detial">Date and Time</a></li>
+          <li><a href="#our-mates">Bridesmaids & Groomsmen</a></li>
+          <li><a href="#rsvp">RSVP</a></li>
+        </ul>
+        <a href="#contact" class="contact-button" onclick="alert('any question? call Hadi : 07769802196')">Contact Us</a>
+      </nav>
+    <div class="main-container">
+        <header>
+            <h1>John & Jane's Wedding</h1>
+            <p>Join us on June 15, 2025</p>
+            <section class="couple-section">
+                <img src="./image/groom.JPG" alt="Groom Photo">
+                <img src="./image/groom-and-bride.JPG" alt="Groom and Bride Photo">
+                <img src="./image/bride.JPG" alt="Bride Photo">
+            </section>
+        </header>
+
+        <div class="our-story" id="our-story">
+            <img id="ourstoryimg" src="./image/chinees-girl-and-boyfriend.jpg" alt="Our Story Image">
+            <h2>Our Story</h2>
+            <p>
+                John and Jane’s story began in the most unexpected way. They met through mutual friends at a gathering, both unsure of what to expect. At first, it was just a friendly conversation—nothing more. But as the night went on, they found themselves talking about everything from childhood dreams to favorite books, realizing how much they had in common. There was an instant connection, a spark neither of them could deny.
+            </p>
+            <p>
+                As weeks passed, they spent more time together, going on long walks, sharing quiet moments, and laughing at silly jokes. What began as a friendship blossomed into something deeper. Both John and Jane realized that they had found something rare—someone who truly understood them.
+            </p>
+            <p>
+                One evening, as they watched the sunset together, John took Jane’s hand and confessed his feelings. With a smile, Jane revealed that she had felt the same way for some time. From that moment, they knew they were meant to be together.
+            </p>
+            <p>
+                Years of love, adventures, and support followed, and on a beautiful, crisp autumn day, John asked Jane to marry him. Surrounded by friends and family, Jane said yes, knowing their journey together was just beginning. Now, they stand ready to share their vows, promising to love and cherish each other for a lifetime.
+            </p>
+            <button id="readmorebtn" type="button">Read more</button>
+        </div>
+
+        <div class="details" id="detial">
+            <div class="transbox"><h2>Wedding Details</h2>
+            <p><strong>Date:</strong> June 15, 2025</p>
+            <p><strong>Time:</strong> 4:00 PM</p>
+            <p><strong>Location:</strong> Grand Ballroom, Downtown Hotel, London</p>
+            </div> 
+        </div>
+      
+       <div id="our-mates">    <h2>Our Bridesmaids and Groomsmen are:  </h2></div> 
+       <div class="gallery-container">
+        
+
+        <div class="gallery">
+            
+            <img src="./image/bridesmaids1.JPG" alt="bridesmaids1">
+         
+          <p class="full-name">bridesmaid 1</p>
+        </div>
+        
+          
+            <div class="gallery">
+            
+                <img src="./image/bridesmaids2.JPG" alt="bridesmaids2">
+              
+              <p class="full-name">bridesmaid 2</p>
+            </div>
+            
+          
+          <div class="gallery">
+            
+            <img src="./image/bridesmaids3.JPG" alt="bridesmaids3">
+          
+          <p class="full-name">bridesmaid 3</p>
+        </div>
+        
+          
+          <div class="gallery">
+            
+              <img src="./image/bridesmaids4.JPG" alt="bridesmaids4">
+           
+            <p class="full-name">bridesmaid 4</p>
+          </div>
+          
+
+          <div class="gallery">
+            
+            <img src="./image/groomsman1.jpg" alt="groomsman1">
+          
+          <p class="full-name">bridesmaid 1</p>
+        </div>
+        
+          
+            <div class="gallery">
+            
+                <img src="./image/groomsman2.JPG" alt="groomsman2">
+              <p class="full-name">groomsman 2</p>
+            </div>
+            
+          
+          <div class="gallery">
+            
+            <img src="./image/groomsman3.JPG" alt="groomsman3">
+          <p class="full-name">groomsman 3</p>
+        </div>
+        
+          
+          <div class="gallery">
+            
+              <img src="./image/groomsman4.JPG" alt="groomsman3">
+            <p class="full-name">groomsman 4</p>
+          </div>
+        </div> 
+
+        <div class="rsvp" id="rsvp">
+            <h2>The Best Gift </h2>
+            <p>will be your presentation</p>
+            <button onclick="alert('Thank you for your RSVP!')">RSVP Now</button>
+
+
+        </div>
+
+    
+    </div>
+   
+    
+    <footer>
+     <p>Thanks everybody in advance </p>   
+    </footer>
+</body>
+</html>
